@@ -4,6 +4,7 @@ defmodule Ipx.MixProject do
   def project do
     [
       app: :ipx,
+      build_embedded: Mix.env() == :prod,
       version: "0.1.0",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,

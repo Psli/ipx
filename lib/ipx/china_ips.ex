@@ -1,7 +1,7 @@
 defmodule Ipx.ChinaIPs do
 
   def load() do
-      [__DIR__, "../../china_ips_ipv4.txt"]
+      [__DIR__, "../../priv/china_ips_ipv4.txt"]
       |> Path.join()
       |> File.stream!([], :line)
       |> Enum.to_list()
