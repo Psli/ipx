@@ -6,8 +6,8 @@ defmodule Ipx do
 
 	alias Ipx.ChinaIPs
 
-	def start_link(opts \\ %{}) do
-    state =  opts[:source] |> ChinaIPs.load()
+	def start_link(opts \\ []) do
+    state = opts |> Keyword.get(:source) |> ChinaIPs.load()
     GenServer.start_link(__MODULE__, state, name: __MODULE__)
   end
 
