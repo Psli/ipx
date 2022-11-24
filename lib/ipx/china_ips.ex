@@ -1,8 +1,7 @@
 defmodule Ipx.ChinaIPs do
 
-  def load() do
-      [__DIR__, "../../priv/china_ips_ipv4.txt"]
-      |> Path.join()
+  def load(database_source) do
+      database_source
       |> File.stream!([], :line)
       |> Enum.to_list()
       |> Enum.map(&CIDR.parse/1)
